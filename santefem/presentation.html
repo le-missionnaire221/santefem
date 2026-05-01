@@ -1,0 +1,2846 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>SantéFem Pro — Présentation</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "DM Sans", system-ui, sans-serif;
+        background: #fff;
+        color: #1c1118;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      :root {
+        --p: #1e3a5f;
+        --pm: #2563a8;
+        --acc: #5b9bd5;
+        --al: #dbeafe;
+        --ap: #f0f7ff;
+        --t: #1a6b5c;
+        --tl: #d8f0eb;
+        --ink: #111827;
+        --is: #374151;
+        --im: #6b7280;
+        --ln: #e5e7eb;
+        --sf: #f9fafb;
+        --w: #fff;
+        --am: #b45309;
+        --aml: #fef3c7;
+        --su: #065f46;
+        --sul: #d1fae5;
+        --da: #b91c1c;
+        --dal: #fee2e2;
+        --dp: "Playfair Display", Georgia, serif;
+      }
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--ln);
+        height: 56px;
+        display: flex;
+        align-items: center;
+        padding: 0 32px;
+        gap: 24px;
+      }
+      .nav-logo {
+        font-family: var(--dp);
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--p);
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      .nav-links {
+        display: flex;
+        gap: 20px;
+        flex: 1;
+      }
+      .nav-links a {
+        font-size: 13px;
+        color: var(--im);
+        text-decoration: none;
+      }
+      .nav-links a:hover {
+        color: var(--ink);
+      }
+      .nav-cta {
+        background: var(--p);
+        color: #fff;
+        padding: 7px 18px;
+        border-radius: 7px;
+        font-size: 13px;
+        font-weight: 500;
+        text-decoration: none;
+        flex-shrink: 0;
+      }
+      @media (max-width: 640px) {
+        .nav-links {
+          display: none;
+        }
+      }
+      .hero {
+        background: var(--p);
+        padding: 90px 32px 70px;
+        text-align: center;
+      }
+      .hero-tag {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 5px 14px;
+        border-radius: 20px;
+        margin-bottom: 26px;
+      }
+      .hero h1 {
+        font-family: var(--dp);
+        font-size: clamp(36px, 6vw, 76px);
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.1;
+        margin-bottom: 20px;
+      }
+      .hero h1 em {
+        font-style: normal;
+        color: var(--acc);
+      }
+      .hero-lead {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.62);
+        max-width: 520px;
+        margin: 0 auto 44px;
+        font-weight: 300;
+        line-height: 1.7;
+      }
+      .hero-kpis {
+        display: flex;
+        justify-content: center;
+        gap: 48px;
+        flex-wrap: wrap;
+        margin-bottom: 44px;
+      }
+      .kpi-val {
+        font-family: var(--dp);
+        font-size: 36px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1;
+      }
+      .kpi-lbl {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.42);
+        margin-top: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+      .hero-btn {
+        display: inline-block;
+        background: var(--acc);
+        color: #fff;
+        padding: 14px 34px;
+        border-radius: 50px;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+      }
+      .bg-alt {
+        background: var(--sf);
+      }
+      .wrap {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 72px 32px;
+      }
+      .wrap-wide {
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 72px 32px;
+      }
+      .eyebrow {
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--pm);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 10px;
+      }
+      .sec-title {
+        font-family: var(--dp);
+        font-size: clamp(28px, 4vw, 46px);
+        font-weight: 700;
+        color: var(--ink);
+        line-height: 1.15;
+        margin-bottom: 14px;
+      }
+      .sec-lead {
+        font-size: 15px;
+        color: var(--im);
+        line-height: 1.7;
+        margin-bottom: 44px;
+        max-width: 600px;
+      }
+      .prob-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      @media (max-width: 680px) {
+        .prob-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .prob {
+        background: #fff;
+        border: 1px solid var(--ln);
+        border-radius: 12px;
+        padding: 22px 18px;
+      }
+      .prob.hi {
+        border-color: var(--al);
+        background: var(--ap);
+      }
+      .prob-ico {
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+      .prob-t {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--ink);
+        margin-bottom: 5px;
+      }
+      .prob-d {
+        font-size: 13px;
+        color: var(--im);
+        line-height: 1.6;
+      }
+      /* FEATURE SECTIONS — no grid, no overflow:hidden */
+      .feat {
+        padding: 64px 32px;
+        border-bottom: 1px solid var(--ln);
+      }
+      .feat:last-child {
+        border-bottom: none;
+      }
+      .feat-inner {
+        max-width: 760px;
+        margin: 0 auto;
+      }
+      .feat-text {
+        text-align: center;
+        margin-bottom: 36px;
+      }
+      .feat-text h3 {
+        font-family: var(--dp);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700;
+        color: var(--ink);
+        line-height: 1.2;
+        margin-bottom: 12px;
+      }
+      .feat-text p {
+        font-size: 15px;
+        color: var(--im);
+        line-height: 1.7;
+        margin-bottom: 16px;
+      }
+      .feat-checks {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 24px;
+        justify-content: center;
+        list-style: none;
+      }
+      .feat-checks li {
+        font-size: 13px;
+        color: var(--is);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .feat-checks li::before {
+        content: "✓";
+        color: var(--t);
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+      .feat-visual {
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid var(--ln);
+        background: #fff;
+      }
+
+      .feat-svg {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 12px;
+        border: 1px solid var(--ln);
+      }
+
+      .fv-bar {
+        background: var(--p);
+        padding: 10px 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .fv-dots {
+        display: flex;
+        gap: 5px;
+      }
+      .fv-dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+      }
+      .fv-title {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 500;
+        flex: 1;
+        text-align: center;
+      }
+      .fv-body {
+        padding: 18px;
+      }
+      .kpi-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        margin-bottom: 14px;
+      }
+      @media (max-width: 560px) {
+        .kpi-row {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      .kc {
+        background: var(--sf);
+        border: 1px solid var(--ln);
+        border-radius: 8px;
+        padding: 11px 12px;
+      }
+      .kc.a {
+        border-top: 3px solid var(--pm);
+      }
+      .kc.b {
+        border-top: 3px solid var(--t);
+      }
+      .kc.c {
+        border-top: 3px solid var(--am);
+      }
+      .kc.d {
+        border-top: 3px solid var(--su);
+      }
+      .kl {
+        font-size: 10px;
+        color: var(--im);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-bottom: 3px;
+      }
+      .kv {
+        font-family: var(--dp);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--ink);
+        line-height: 1;
+      }
+      .ks {
+        font-size: 10px;
+        color: var(--im);
+        margin-top: 2px;
+      }
+      .ai-tag {
+        background: linear-gradient(90deg, #5c40cc, var(--pm));
+        color: #fff;
+        font-size: 9px;
+        font-weight: 500;
+        padding: 2px 8px;
+        border-radius: 8px;
+        display: inline-flex;
+        align-items: center;
+        gap: 3px;
+        white-space: nowrap;
+      }
+      .q-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .qi {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        padding: 9px 11px;
+        border: 1px solid var(--ln);
+        border-radius: 7px;
+        background: #fff;
+      }
+      .qi.on {
+        border-color: var(--t);
+        background: var(--tl);
+      }
+      .qi.urg {
+        border-color: var(--da);
+        background: var(--dal);
+      }
+      .qn {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 700;
+        flex-shrink: 0;
+        background: var(--al);
+        color: var(--p);
+      }
+      .qn.on {
+        background: var(--t);
+        color: #fff;
+      }
+      .qn.urg {
+        background: var(--da);
+        color: #fff;
+      }
+      .qname {
+        font-size: 13px;
+        font-weight: 500;
+        flex: 1;
+      }
+      .qmeta {
+        font-size: 11px;
+        color: var(--im);
+      }
+      .qw {
+        font-size: 11px;
+        font-weight: 500;
+        padding: 2px 7px;
+        border-radius: 7px;
+        background: var(--aml);
+        color: var(--am);
+        flex-shrink: 0;
+      }
+      .qw.on {
+        background: var(--tl);
+        color: var(--t);
+      }
+      .ai-box {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        background: #eff0ff;
+        border: 1px solid #c5c8f8;
+        border-radius: 7px;
+        padding: 8px 11px;
+        margin-top: 10px;
+      }
+      .ai-box-t {
+        font-size: 11px;
+        color: #3730a3;
+        line-height: 1.5;
+      }
+      .chat-list {
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+      }
+      .cr {
+        display: flex;
+        gap: 7px;
+        max-width: 86%;
+      }
+      .cr.me {
+        flex-direction: row-reverse;
+        align-self: flex-end;
+        max-width: 78%;
+      }
+      .cav {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #5c40cc, var(--pm));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        flex-shrink: 0;
+        color: #fff;
+      }
+      .cb {
+        padding: 9px 12px;
+        border-radius: 13px;
+        font-size: 12px;
+        line-height: 1.5;
+      }
+      .cr.bot .cb {
+        background: var(--sf);
+        border: 1px solid var(--ln);
+        border-bottom-left-radius: 3px;
+      }
+      .cr.me .cb {
+        background: var(--p);
+        color: #fff;
+        border-bottom-right-radius: 3px;
+      }
+      .tv {
+        background: #0e0c12;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid #252030;
+      }
+      .tv-top {
+        background: linear-gradient(90deg, var(--p), var(--pm));
+        padding: 14px 22px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .tv-cn {
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.55);
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        margin-bottom: 2px;
+      }
+      .tv-nm {
+        font-family: var(--dp);
+        font-size: 20px;
+        font-weight: 700;
+        color: #fff;
+      }
+      .tv-ti {
+        font-family: var(--dp);
+        font-size: 30px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1;
+        text-align: right;
+      }
+      .tv-td {
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.5);
+        margin-top: 2px;
+      }
+      .tv-body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .tv-col {
+        padding: 16px 20px;
+      }
+      .tv-col:first-child {
+        border-right: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .tv-sub {
+        font-size: 9px;
+        color: #6b7280;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 11px;
+      }
+      .tv-act {
+        background: rgba(26, 107, 92, 0.2);
+        border: 1px solid rgba(26, 107, 92, 0.3);
+        border-radius: 9px;
+        padding: 13px 15px;
+        display: flex;
+        align-items: center;
+        gap: 11px;
+      }
+      .tv-an {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(26, 107, 92, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--dp);
+        font-size: 21px;
+        font-weight: 700;
+        color: #5dcaa5;
+        flex-shrink: 0;
+      }
+      .tv-aname {
+        font-family: var(--dp);
+        font-size: 17px;
+        font-weight: 700;
+        color: #fff;
+      }
+      .tv-ameta {
+        font-size: 11px;
+        color: #5dcaa5;
+        margin-top: 2px;
+      }
+      .tv-li {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        padding: 8px 10px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 7px;
+        margin-bottom: 5px;
+      }
+      .tv-ln {
+        width: 27px;
+        height: 27px;
+        border-radius: 50%;
+        background: rgba(181, 122, 152, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--dp);
+        font-size: 13px;
+        font-weight: 700;
+        color: #e9adc8;
+        flex-shrink: 0;
+      }
+      .tv-lname {
+        font-size: 12px;
+        font-weight: 500;
+        color: #fff;
+        flex: 1;
+      }
+      .tv-lw {
+        font-size: 11px;
+        color: #fbbf24;
+      }
+      .tv-foot {
+        background: rgba(255, 255, 255, 0.03);
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 8px 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .tv-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #4ade80;
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.4;
+        }
+      }
+      .tv-ftxt {
+        font-size: 10px;
+        color: #4ade80;
+      }
+      .tv-fmsg {
+        font-size: 10px;
+        color: #6b7280;
+      }
+      .mod-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 13px;
+      }
+      @media (max-width: 780px) {
+        .mod-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 420px) {
+        .mod-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .mc {
+        background: #fff;
+        border: 1px solid var(--ln);
+        border-radius: 11px;
+        padding: 16px 15px;
+      }
+      .mc-ico {
+        font-size: 22px;
+        margin-bottom: 7px;
+        display: block;
+      }
+      .mc-n {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--ink);
+        margin-bottom: 4px;
+      }
+      .mc-d {
+        font-size: 11px;
+        color: var(--im);
+        line-height: 1.5;
+      }
+      .mc-tag {
+        display: inline-block;
+        margin-top: 7px;
+        padding: 2px 7px;
+        border-radius: 6px;
+        font-size: 10px;
+        font-weight: 500;
+      }
+      .t-ia {
+        background: #eeedfe;
+        color: #3c3489;
+      }
+      .t-fin {
+        background: var(--tl);
+        color: #0a4538;
+      }
+      .t-com {
+        background: var(--ap);
+        color: var(--p);
+      }
+      .t-saas {
+        background: var(--aml);
+        color: var(--am);
+      }
+      .phones {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .ph {
+        width: 155px;
+        flex-shrink: 0;
+      }
+      .ph-frame {
+        border: 4px solid var(--p);
+        border-radius: 22px;
+        overflow: hidden;
+        background: var(--sf);
+      }
+      .ph-bar {
+        background: var(--p);
+        padding: 5px 10px 4px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .ph-time {
+        font-size: 9px;
+        font-weight: 500;
+        color: #fff;
+      }
+      .ph-hdr {
+        background: var(--p);
+        padding: 8px 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .ph-title {
+        font-family: var(--dp);
+        font-size: 11px;
+        font-weight: 700;
+        color: #fff;
+        flex: 1;
+      }
+      .ph-body {
+        padding: 7px;
+      }
+      .ph-hero {
+        background: var(--p);
+        border-radius: 7px;
+        padding: 9px;
+        color: #fff;
+        margin-bottom: 5px;
+      }
+      .ph-greet {
+        font-size: 8px;
+        opacity: 0.7;
+      }
+      .ph-name {
+        font-family: var(--dp);
+        font-size: 12px;
+        font-weight: 700;
+      }
+      .ph-chips {
+        display: flex;
+        gap: 3px;
+        margin-top: 4px;
+        flex-wrap: wrap;
+      }
+      .ph-chip {
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 5px;
+        padding: 1px 5px;
+        font-size: 7px;
+        color: #fff;
+      }
+      .ph-sec {
+        font-family: var(--dp);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--ink);
+        margin-bottom: 3px;
+      }
+      .ph-rdv {
+        background: #fff;
+        border: 1px solid var(--ln);
+        border-radius: 6px;
+        padding: 6px 7px;
+        margin-bottom: 4px;
+      }
+      .ph-rdv-t {
+        font-family: var(--dp);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--pm);
+      }
+      .ph-rdv-n {
+        font-size: 8px;
+        font-weight: 500;
+      }
+      .ph-rdv-m {
+        font-size: 7px;
+        color: var(--im);
+      }
+      .ph-al {
+        padding: 4px 6px;
+        border-radius: 4px;
+        font-size: 7px;
+        line-height: 1.4;
+        margin-bottom: 3px;
+      }
+      .ph-aw {
+        background: #fffbeb;
+        color: #7a4500;
+        border: 1px solid #fcd34d;
+      }
+      .ph-ai {
+        background: #eff6ff;
+        color: #1e3a8a;
+        border: 1px solid #bfdbfe;
+      }
+      .ph-qbig {
+        background: var(--p);
+        border-radius: 7px;
+        padding: 10px 6px;
+        text-align: center;
+        color: #fff;
+        margin-bottom: 5px;
+      }
+      .ph-qn {
+        font-family: var(--dp);
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 1;
+      }
+      .ph-ql {
+        font-size: 7px;
+        opacity: 0.7;
+      }
+      .ph-wc {
+        background: #fff;
+        border: 1px solid var(--ln);
+        border-radius: 6px;
+        padding: 7px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 4px;
+      }
+      .ph-wt {
+        font-family: var(--dp);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--am);
+        line-height: 1;
+      }
+      .ph-wl {
+        font-size: 7px;
+        color: var(--im);
+      }
+      .ph-ok {
+        background: #dff2e9;
+        color: #0a4538;
+        border: 1px solid #a7f3d0;
+        padding: 4px 6px;
+        border-radius: 4px;
+        font-size: 7px;
+      }
+      .ph-preg {
+        background: #fff;
+        border: 1px solid var(--ln);
+        border-radius: 7px;
+        padding: 9px 6px;
+        text-align: center;
+        margin-bottom: 5px;
+      }
+      .ph-ring {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 4px solid var(--al);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 5px;
+        background: var(--ap);
+      }
+      .ph-rn {
+        font-family: var(--dp);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--pm);
+        line-height: 1;
+      }
+      .ph-rl {
+        font-size: 7px;
+        color: var(--im);
+      }
+      .ph-term {
+        font-size: 8px;
+        padding: 3px 7px;
+        background: var(--ap);
+        border-radius: 5px;
+        color: var(--pm);
+      }
+      .ph-chat {
+        background: #f0ece8;
+        padding: 6px;
+        min-height: 130px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .pc-row {
+        display: flex;
+        gap: 4px;
+        max-width: 90%;
+      }
+      .pc-row.me {
+        align-self: flex-end;
+        flex-direction: row-reverse;
+      }
+      .pc-av {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: var(--al);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 8px;
+        flex-shrink: 0;
+      }
+      .pc-bub {
+        padding: 4px 7px;
+        border-radius: 8px;
+        font-size: 7px;
+        line-height: 1.4;
+      }
+      .pc-row.bot .pc-bub {
+        background: #fff;
+        border: 1px solid var(--ln);
+      }
+      .pc-row.me .pc-bub {
+        background: var(--p);
+        color: #fff;
+      }
+      .ph-ci {
+        padding: 4px 6px;
+        border-top: 1px solid var(--ln);
+        display: flex;
+        gap: 4px;
+        background: #fff;
+      }
+      .ph-ci-inp {
+        flex: 1;
+        padding: 3px 7px;
+        border: 1px solid var(--ln);
+        border-radius: 10px;
+        font-size: 7px;
+        color: var(--im);
+        background: var(--sf);
+      }
+      .ph-ci-btn {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: var(--p);
+        border: none;
+        color: #fff;
+        font-size: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .ph-bnav {
+        display: flex;
+        border-top: 1px solid var(--ln);
+        background: #fff;
+      }
+      .ph-nb {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1px;
+        padding: 4px 2px;
+        border: none;
+        background: none;
+      }
+      .ph-nb.a {
+        color: var(--p);
+      }
+      .ph-nb:not(.a) {
+        color: var(--im);
+      }
+      .ph-nb-ico {
+        font-size: 12px;
+        line-height: 1;
+      }
+      .ph-nb-lbl {
+        font-size: 7px;
+        font-weight: 500;
+      }
+      .ph-lbl {
+        text-align: center;
+        font-size: 11px;
+        color: var(--im);
+        margin-top: 6px;
+      }
+      .comp-t {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid var(--ln);
+        border-radius: 11px;
+        overflow: hidden;
+      }
+      .comp-t th {
+        background: var(--sf);
+        padding: 12px 16px;
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--im);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        text-align: left;
+        border-bottom: 1px solid var(--ln);
+      }
+      .comp-t th.hl {
+        background: var(--ap);
+        color: var(--p);
+      }
+      .comp-t td {
+        padding: 11px 16px;
+        font-size: 13px;
+        color: var(--is);
+        border-bottom: 1px solid var(--ln);
+        vertical-align: top;
+      }
+      .comp-t tr:last-child td {
+        border-bottom: none;
+      }
+      .comp-t tr:hover td {
+        background: var(--sf);
+      }
+      .fn {
+        font-weight: 500;
+        color: var(--ink);
+      }
+      .ok {
+        color: var(--t);
+        font-weight: 600;
+      }
+      .no {
+        color: var(--da);
+      }
+      .plans {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      @media (max-width: 680px) {
+        .plans {
+          grid-template-columns: 1fr;
+        }
+      }
+      .plan {
+        background: #fff;
+        border: 1px solid var(--ln);
+        border-radius: 16px;
+        padding: 28px 22px;
+        position: relative;
+      }
+      .plan.top {
+        border: 2px solid var(--pm);
+      }
+      .plan-badge {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--p);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 500;
+        padding: 3px 14px;
+        border-radius: 20px;
+        white-space: nowrap;
+      }
+      .plan-nm {
+        font-family: var(--dp);
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--ink);
+        margin-bottom: 3px;
+      }
+      .plan-sb {
+        font-size: 12px;
+        color: var(--im);
+        margin-bottom: 18px;
+      }
+      .plan-pr {
+        font-family: var(--dp);
+        font-size: 34px;
+        font-weight: 700;
+        color: var(--ink);
+        line-height: 1;
+        margin-bottom: 3px;
+      }
+      .plan-pr span {
+        font-size: 13px;
+        font-weight: 400;
+        color: var(--im);
+      }
+      .plan-div {
+        height: 1px;
+        background: var(--ln);
+        margin: 18px 0;
+      }
+      .plan-fs {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 22px;
+      }
+      .plan-fs li {
+        display: flex;
+        align-items: flex-start;
+        gap: 7px;
+        font-size: 13px;
+        color: var(--is);
+      }
+      .plan-fs li::before {
+        content: "✓";
+        color: var(--t);
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+      .plan-btn {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        background: var(--sf);
+        color: var(--ink);
+        border: 1px solid var(--ln);
+        border-radius: 8px;
+        font-family: "DM Sans", sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        text-align: center;
+      }
+      .plan.top .plan-btn {
+        background: var(--p);
+        color: #fff;
+        border-color: var(--p);
+      }
+      .footer {
+        background: var(--p);
+        padding: 72px 32px;
+        text-align: center;
+      }
+      .footer h2 {
+        font-family: var(--dp);
+        font-size: clamp(28px, 4vw, 50px);
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 14px;
+      }
+      .footer p {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.52);
+        max-width: 460px;
+        margin: 0 auto 32px;
+      }
+      .footer-btns {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .fb {
+        padding: 13px 30px;
+        border-radius: 50px;
+        font-family: "DM Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        border: none;
+      }
+      .fb.p {
+        background: var(--acc);
+        color: #fff;
+      }
+      .fb.s {
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .footer-note {
+        margin-top: 32px;
+        padding-top: 22px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.28);
+      }
+      /* CHATBOT — position:fixed on body, isolated, no parent with overflow */
+      #chatbot {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 9999;
+      }
+      #cb-win {
+        position: absolute;
+        bottom: 58px;
+        right: 0;
+        width: 310px;
+        max-width: calc(100vw - 40px);
+        background: #fff;
+        border: 1px solid var(--ln);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 6px 28px rgba(74, 25, 66, 0.16);
+        display: none;
+        flex-direction: column;
+      }
+      #cb-win.open {
+        display: flex;
+      }
+      .cb-head {
+        background: var(--p);
+        padding: 12px 14px;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+      }
+      .cb-av {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        flex-shrink: 0;
+      }
+      .cb-nm {
+        font-size: 13px;
+        font-weight: 500;
+        color: #fff;
+      }
+      .cb-st {
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.62);
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-top: 1px;
+      }
+      .cb-sdot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #4ade80;
+      }
+      .cb-x {
+        background: none;
+        border: none;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 20px;
+        cursor: pointer;
+        margin-left: auto;
+        line-height: 1;
+        padding: 0 2px;
+      }
+      .cb-msgs {
+        padding: 12px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        max-height: 280px;
+        min-height: 160px;
+        background: #f7f3f6;
+      }
+      .cb-row {
+        display: flex;
+        gap: 6px;
+        max-width: 88%;
+      }
+      .cb-row.u {
+        align-self: flex-end;
+        flex-direction: row-reverse;
+      }
+      .cb-rav {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--al);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        flex-shrink: 0;
+      }
+      .cb-bub {
+        padding: 7px 10px;
+        border-radius: 12px;
+        font-size: 12px;
+        line-height: 1.5;
+      }
+      .cb-row.b .cb-bub {
+        background: #fff;
+        border: 1px solid var(--ln);
+        border-bottom-left-radius: 3px;
+      }
+      .cb-row.u .cb-bub {
+        background: var(--p);
+        color: #fff;
+        border-bottom-right-radius: 3px;
+      }
+      .cb-quick {
+        padding: 7px 11px;
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+        border-top: 1px solid var(--ln);
+        background: #fff;
+      }
+      .cb-qb {
+        padding: 4px 9px;
+        border: 1px solid var(--al);
+        border-radius: 11px;
+        background: var(--ap);
+        color: var(--p);
+        font-size: 11px;
+        font-weight: 500;
+        cursor: pointer;
+        font-family: "DM Sans", sans-serif;
+      }
+      .cb-qb:hover {
+        background: var(--p);
+        color: #fff;
+      }
+      .cb-ir {
+        padding: 8px 11px;
+        border-top: 1px solid var(--ln);
+        display: flex;
+        gap: 7px;
+        background: #fff;
+      }
+      .cb-inp {
+        flex: 1;
+        padding: 7px 10px;
+        border: 1px solid var(--ln);
+        border-radius: 16px;
+        font-family: "DM Sans", sans-serif;
+        font-size: 12px;
+        color: var(--ink);
+        background: var(--sf);
+        outline: none;
+      }
+      .cb-inp:focus {
+        border-color: var(--pm);
+      }
+      .cb-send {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: var(--p);
+        border: none;
+        color: #fff;
+        font-size: 14px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      #cb-btn {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: var(--p);
+        border: none;
+        cursor: pointer;
+        font-size: 20px;
+        color: #fff;
+        box-shadow: 0 3px 14px rgba(74, 25, 66, 0.28);
+        display: block;
+      }
+      .cb-typing span {
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--im);
+        animation: tb 1.2s infinite;
+        margin: 0 2px;
+      }
+      .cb-typing span:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .cb-typing span:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+      @keyframes tb {
+        0%,
+        60%,
+        100% {
+          transform: translateY(0);
+        }
+        30% {
+          transform: translateY(-4px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="#" class="nav-logo">SantéFem Pro</a>
+      <div class="nav-links">
+        <a href="#fonctionnalites">Fonctionnalités</a>
+        <a href="#modules">Modules</a>
+        <a href="#patiente">App Patiente</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#comparaison">Comparaison</a>
+      </div>
+      <a href="#tarifs" class="nav-cta">Démarrer →</a>
+    </nav>
+    <section class="hero">
+      <div class="hero-tag">Première solution IA pour cabinets gynécologiques en Afrique</div>
+      <h1>Le cabinet <em>intelligent</em><br />commence ici</h1>
+      <p class="hero-lead">
+        SantéFem Pro remplace les outils éparpillés, les tableurs et les carnets papier. Une IA qui
+        travaille pour vous.
+      </p>
+      <div class="hero-kpis">
+        <div>
+          <div class="kpi-val">20+</div>
+          <div class="kpi-lbl">Modules</div>
+        </div>
+        <div>
+          <div class="kpi-val">2</div>
+          <div class="kpi-lbl">PWA incluses</div>
+        </div>
+        <div>
+          <div class="kpi-val">1h</div>
+          <div class="kpi-lbl">Pour démarrer</div>
+        </div>
+        <div>
+          <div class="kpi-val">0 FCFA</div>
+          <div class="kpi-lbl">Installation</div>
+        </div>
+      </div>
+      <a href="#fonctionnalites" class="hero-btn">Découvrir ↓</a>
+    </section>
+    <div class="bg-alt">
+      <div class="wrap-wide">
+        <div class="eyebrow">Le constat</div>
+        <div class="sec-title">Les vrais problèmes d'un cabinet</div>
+        <div class="prob-grid">
+          <div class="prob hi">
+            <div class="prob-ico">😤</div>
+            <div class="prob-t">Salle d'attente chaotique</div>
+            <div class="prob-d">
+              Les patientes attendent sans savoir leur tour. Les urgences se perdent dans la masse.
+            </div>
+          </div>
+          <div class="prob">
+            <div class="prob-ico">📂</div>
+            <div class="prob-t">Dossiers éparpillés</div>
+            <div class="prob-d">
+              Papier, Excel, WhatsApp… Le médecin perd 10 minutes à chercher les antécédents.
+            </div>
+          </div>
+          <div class="prob">
+            <div class="prob-ico">💸</div>
+            <div class="prob-t">Finance non maîtrisée</div>
+            <div class="prob-d">
+              Impayés oubliés, remboursements perdus. Le cabinet ne sait pas combien il gagne.
+            </div>
+          </div>
+          <div class="prob">
+            <div class="prob-ico">📱</div>
+            <div class="prob-t">Pas d'outil pour les patientes</div>
+            <div class="prob-d">
+              Elles appellent pour tout. Aucun accès autonome à leur information.
+            </div>
+          </div>
+          <div class="prob hi">
+            <div class="prob-ico">🔧</div>
+            <div class="prob-t">Logiciels inadaptés</div>
+            <div class="prob-d">
+              Les ERP génériques coûtent des millions à installer et finissent inutilisés.
+            </div>
+          </div>
+          <div class="prob">
+            <div class="prob-ico">⏰</div>
+            <div class="prob-t">Le médecin fait tout</div>
+            <div class="prob-d">40% du temps sur de l'administratif au lieu de soigner.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="fonctionnalites">
+      <div class="feat">
+        <div class="feat-inner">
+          <div class="feat-text">
+            <div class="eyebrow">Pilotage</div>
+            <h3>Tout votre cabinet en un coup d'œil</h3>
+            <p>
+              Le tableau de bord en temps réel vous donne une vision instantanée de l'activité. Rien
+              ne vous échappe.
+            </p>
+            <ul class="feat-checks">
+              <li>KPIs en temps réel : patientes, recettes, no-show</li>
+              <li>Alertes IA automatiques (tension anormale, impayés)</li>
+              <li>File d'attente avec statuts urgence</li>
+              <li>Programme du jour d'un seul regard</li>
+            </ul>
+          </div>
+          <svg class="feat-svg" viewBox="0 0 680 320" xmlns="http://www.w3.org/2000/svg">
+            <!-- Window chrome -->
+            <rect width="680" height="320" rx="12" fill="#ffffff" stroke="#e6dce2" />
+            <rect width="680" height="38" rx="12" fill="#1e3a5f" />
+            <rect y="26" width="680" height="12" fill="#1e3a5f" />
+            <circle cx="20" cy="19" r="5" fill="#ef4444" />
+            <circle cx="36" cy="19" r="5" fill="#fbbf24" />
+            <circle cx="52" cy="19" r="5" fill="#4ade80" />
+            <text
+              x="340"
+              y="24"
+              text-anchor="middle"
+              fill="rgba(255,255,255,0.8)"
+              font-size="11"
+              font-family="DM Sans, sans-serif"
+            >
+              SantéFem Pro — Tableau de bord
+            </text>
+            <!-- KPI cards -->
+            <rect x="16" y="50" width="148" height="56" rx="7" fill="#f8f3f6" stroke="#e6dce2" />
+            <rect x="16" y="50" width="148" height="3" rx="2" fill="#2563a8" />
+            <text
+              x="26"
+              y="68"
+              fill="#8c7a84"
+              font-size="9"
+              font-family="DM Sans,sans-serif"
+              font-weight="500"
+            >
+              PATIENTES
+            </text>
+            <text
+              x="26"
+              y="89"
+              fill="#1c1118"
+              font-size="22"
+              font-family="Georgia,serif"
+              font-weight="700"
+            >
+              8
+            </text>
+            <text x="60" y="89" fill="#8c7a84" font-size="9" font-family="DM Sans,sans-serif">
+              2 urgences
+            </text>
+            <rect x="174" y="50" width="148" height="56" rx="7" fill="#f8f3f6" stroke="#e6dce2" />
+            <rect x="174" y="50" width="148" height="3" rx="2" fill="#1a6b5c" />
+            <text
+              x="184"
+              y="68"
+              fill="#8c7a84"
+              font-size="9"
+              font-family="DM Sans,sans-serif"
+              font-weight="500"
+            >
+              RECETTES
+            </text>
+            <text
+              x="184"
+              y="89"
+              fill="#1c1118"
+              font-size="22"
+              font-family="Georgia,serif"
+              font-weight="700"
+            >
+              223k
+            </text>
+            <text x="228" y="89" fill="#8c7a84" font-size="9" font-family="DM Sans,sans-serif">
+              FCFA
+            </text>
+            <rect x="332" y="50" width="148" height="56" rx="7" fill="#f8f3f6" stroke="#e6dce2" />
+            <rect x="332" y="50" width="148" height="3" rx="2" fill="#b85c00" />
+            <text
+              x="342"
+              y="68"
+              fill="#8c7a84"
+              font-size="9"
+              font-family="DM Sans,sans-serif"
+              font-weight="500"
+            >
+              EN ATTENTE
+            </text>
+            <text
+              x="342"
+              y="89"
+              fill="#1c1118"
+              font-size="22"
+              font-family="Georgia,serif"
+              font-weight="700"
+            >
+              6
+            </text>
+            <text x="368" y="89" fill="#8c7a84" font-size="9" font-family="DM Sans,sans-serif">
+              ~45 min
+            </text>
+            <rect x="490" y="50" width="174" height="56" rx="7" fill="#f8f3f6" stroke="#e6dce2" />
+            <rect x="490" y="50" width="174" height="3" rx="2" fill="#1a6b4a" />
+            <text
+              x="500"
+              y="68"
+              fill="#8c7a84"
+              font-size="9"
+              font-family="DM Sans,sans-serif"
+              font-weight="500"
+            >
+              RDV SEMAINE
+            </text>
+            <text
+              x="500"
+              y="89"
+              fill="#1c1118"
+              font-size="22"
+              font-family="Georgia,serif"
+              font-weight="700"
+            >
+              42
+            </text>
+            <text x="528" y="89" fill="#8c7a84" font-size="9" font-family="DM Sans,sans-serif">
+              3 no-show
+            </text>
+            <!-- Queue section header -->
+            <text
+              x="16"
+              y="130"
+              fill="#1c1118"
+              font-size="13"
+              font-family="DM Sans,sans-serif"
+              font-weight="500"
+            >
+              File d'attente
+            </text>
+            <rect x="550" y="118" width="114" height="18" rx="9" fill="url(#iagrad)" />
+            <defs>
+              <linearGradient id="iagrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#5c40cc" />
+                <stop offset="100%" stop-color="#2563a8" />
+              </linearGradient>
+            </defs>
+            <text
+              x="607"
+              y="131"
+              text-anchor="middle"
+              fill="white"
+              font-size="9"
+              font-family="DM Sans,sans-serif"
+              font-weight="500"
+            >
+              ✨ IA active
+            </text>
+            <!-- Queue item 1 - active -->
+            <rect x="16" y="144" width="648" height="40" rx="7" fill="#d8f0eb" stroke="#1a6b5c" />
+            <circle cx="42" cy="164" r="13" fill="#1a6b5c" />
+            <text
+              x="42"
+              y="169"
+              text-anchor="middle"
+              fill="white"
+              font-size="12"
+              font-family="Georgia,serif"
+              font-weight="700"
+            >
+              1
+            </text>
+            <text
+              x="64"
+              y="161"
+              fill="#1c1118"
+              font-size="12"
+              font-family="DM Sans,sans-serif"
+              font-weight="500"
+            >
+              Aminata Diallo
+            </text>
+            <text x="64" y="176" fill="#4a3d45" font-size="10" font-family="DM Sans,sans-serif">
+              Suivi grossesse S24 · Dr. Diallo
+            </text>
+            <rect x="578" y="154" width="70" height="20" rx="10" fill="#d8f0eb" stroke="#1a6b5c" />
+            <text
+              x="613"
+              y="168"
+              text-anchor="middle"
+              fill="#1a6b5c"
+              font-size="10"
+              font-family="DM Sans,sans-serif"
+              font-weight="500"
+            >
+              En cours
+            </text>
+            <!-- Queue item 2 -->
+            <rect x="16" y="190" width="648" height="40" rx="7" fill="white" stroke="#e6dce2" />
+            <circle cx="42" cy="210" r="13" fill="#f0dce8" />
+            <text
+              x="42"
+              y="215"
+              text-anchor="middle"
+              fill="#1e3a5f"
+              font-size="12"
+              font-family="Georgia,serif"
+              font-weight="700"
+            >
+              2
+            </text>
+            <text
+              x="64"
+              y="207"
+              fill="#1c1118"
+              font-size="12"
+              font-family="DM Sans,sans-serif"
+              font-weight="500"
+            >
+              Fatou Sène
+            </text>
+            <text x="64" y="222" fill="#4a3d45" font-size="10" font-family="DM Sans,sans-serif">
+              Contraception · Dr. Sène
+            </text>
+            <rect x="578" y="200" width="70" height="20" rx="10" fill="#fef0de" />
+            <text
+              x="613"
+              y="214"
+              text-anchor="middle"
+              fill="#b85c00"
+              font-size="10"
+              font-family="DM Sans,sans-serif"
+              font-weight="500"
+            >
+              18 min
+            </text>
+            <!-- Queue item 3 - urgent -->
+            <rect x="16" y="236" width="648" height="40" rx="7" fill="#fdeaea" stroke="#b82020" />
+            <circle cx="42" cy="256" r="13" fill="#b82020" />
+            <text
+              x="42"
+              y="261"
+              text-anchor="middle"
+              fill="white"
+              font-size="12"
+              font-family="Georgia,serif"
+              font-weight="700"
+            >
+              5
+            </text>
+            <text
+              x="64"
+              y="253"
+              fill="#1c1118"
+              font-size="12"
+              font-family="DM Sans,sans-serif"
+              font-weight="500"
+            >
+              Awa Mbaye
+            </text>
+            <text x="64" y="268" fill="#4a3d45" font-size="10" font-family="DM Sans,sans-serif">
+              Grossesse S32 — TA élevée
+            </text>
+            <text
+              x="578"
+              y="261"
+              fill="#b82020"
+              font-size="11"
+              font-family="DM Sans,sans-serif"
+              font-weight="600"
+            >
+              URGENT
+            </text>
+            <!-- AI alert -->
+            <rect x="16" y="284" width="648" height="24" rx="6" fill="#eff0ff" stroke="#c5c8f8" />
+            <text x="30" y="299" fill="#3730a3" font-size="10" font-family="DM Sans,sans-serif">
+              ✨ IA : Tension 140/90 pour Awa Mbaye — consultation prioritaire recommandée
+            </text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="feat bg-alt">
+        <div class="feat-inner">
+          <div class="feat-text">
+            <div class="eyebrow">Intelligence artificielle</div>
+            <h3>L'IA qui travaille à votre place</h3>
+            <p>
+              Un assistant médical alimenté par Claude (Anthropic) qui élimine toutes les tâches
+              répétitives.
+            </p>
+            <ul class="feat-checks">
+              <li>Transcription vocale automatique</li>
+              <li>Ordonnances générées en 1 clic</li>
+              <li>Résumé IA du dossier avant chaque consultation</li>
+              <li>Aide au diagnostic différentiel</li>
+              <li>Analyse automatique des résultats de labo</li>
+            </ul>
+          </div>
+          <svg class="feat-svg" viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg">
+            <rect width="680" height="300" rx="12" fill="#ffffff" stroke="#e6dce2" />
+            <rect width="680" height="38" rx="12" fill="#1e3a5f" />
+            <rect y="26" width="680" height="12" fill="#1e3a5f" />
+            <circle cx="20" cy="19" r="5" fill="#ef4444" />
+            <circle cx="36" cy="19" r="5" fill="#fbbf24" />
+            <circle cx="52" cy="19" r="5" fill="#4ade80" />
+            <text
+              x="340"
+              y="24"
+              text-anchor="middle"
+              fill="rgba(255,255,255,0.8)"
+              font-size="11"
+              font-family="DM Sans,sans-serif"
+            >
+              Assistant IA Médical — Claude
+            </text>
+            <!-- IA header -->
+            <circle cx="44" cy="68" r="16" fill="url(#iagrad2)" />
+            <defs>
+              <linearGradient id="iagrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#5c40cc" />
+                <stop offset="100%" stop-color="#2563a8" />
+              </linearGradient>
+            </defs>
+            <text x="44" y="73" text-anchor="middle" fill="white" font-size="14">✨</text>
+            <text
+              x="68"
+              y="64"
+              fill="#1c1118"
+              font-size="13"
+              font-family="DM Sans,sans-serif"
+              font-weight="500"
+            >
+              Assistant IA Médical
+            </text>
+            <circle cx="68" cy="76" r="3" fill="#1a6b5c" />
+            <text x="76" y="80" fill="#1a6b5c" font-size="10" font-family="DM Sans,sans-serif">
+              Claude · Disponible 24h/24
+            </text>
+            <line x1="16" y1="92" x2="664" y2="92" stroke="#e6dce2" />
+            <!-- Chat messages -->
+            <!-- Bot msg 1 -->
+            <circle cx="32" cy="112" r="12" fill="#f0dce8" />
+            <text x="32" y="117" text-anchor="middle" font-size="11">✨</text>
+            <rect x="52" y="100" width="360" height="36" rx="10" fill="#f8f3f6" stroke="#e6dce2" />
+            <rect x="52" y="100" width="4" height="36" rx="2" fill="transparent" />
+            <text x="64" y="114" fill="#1c1118" font-size="11" font-family="DM Sans,sans-serif">
+              Bonjour Dr. Diallo ! Je peux résumer un dossier,
+            </text>
+            <text x="64" y="128" fill="#1c1118" font-size="11" font-family="DM Sans,sans-serif">
+              générer une ordonnance ou analyser des résultats.
+            </text>
+            <!-- User msg -->
+            <rect x="300" y="148" width="364" height="24" rx="10" fill="#1e3a5f" />
+            <text
+              x="482"
+              y="164"
+              text-anchor="middle"
+              fill="white"
+              font-size="11"
+              font-family="DM Sans,sans-serif"
+            >
+              Résume le dossier d'Aminata Diallo
+            </text>
+            <!-- Bot msg 2 -->
+            <circle cx="32" cy="196" r="12" fill="#f0dce8" />
+            <text x="32" y="201" text-anchor="middle" font-size="11">✨</text>
+            <rect x="52" y="182" width="440" height="52" rx="10" fill="#f8f3f6" stroke="#e6dce2" />
+            <text
+              x="64"
+              y="198"
+              fill="#1c1118"
+              font-size="11"
+              font-family="DM Sans,sans-serif"
+              font-weight="600"
+            >
+              Aminata Diallo, 28 ans
+            </text>
+            <text x="178" y="198" fill="#1c1118" font-size="11" font-family="DM Sans,sans-serif">
+              — Grossesse 24 SA, terme 15 août.
+            </text>
+            <text x="64" y="212" fill="#b82020" font-size="11" font-family="DM Sans,sans-serif">
+              ⚠ Allergie pénicilline.
+            </text>
+            <text x="168" y="212" fill="#1c1118" font-size="11" font-family="DM Sans,sans-serif">
+              Anémie Hb 10.2.
+            </text>
+            <text
+              x="64"
+              y="226"
+              fill="#1c1118"
+              font-size="11"
+              font-family="DM Sans,sans-serif"
+              font-weight="600"
+            >
+              À faire :
+            </text>
+            <text x="102" y="226" fill="#1c1118" font-size="11" font-family="DM Sans,sans-serif">
+              écho morphologique T2 aujourd'hui.
+            </text>
+            <!-- User msg 2 -->
+            <rect x="340" y="248" width="324" height="24" rx="10" fill="#1e3a5f" />
+            <text
+              x="502"
+              y="264"
+              text-anchor="middle"
+              fill="white"
+              font-size="11"
+              font-family="DM Sans,sans-serif"
+            >
+              Génère une ordonnance grossesse S24
+            </text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="feat">
+        <div class="feat-inner">
+          <div class="feat-text">
+            <div class="eyebrow">Expérience salle d'attente</div>
+            <h3>Fini l'anxiété de l'attente</h3>
+            <p>
+              Un écran TV affiche les numéros en temps réel. Chaque patiente suit son tour depuis
+              son téléphone.
+            </p>
+            <ul class="feat-checks">
+              <li>Écran TV dark mode, mise à jour automatique</li>
+              <li>Numéro de file sur le smartphone de la patiente</li>
+              <li>Temps d'attente estimé en temps réel</li>
+              <li>SMS automatique quand c'est son tour</li>
+              <li>Urgences signalées en rouge</li>
+            </ul>
+          </div>
+          <svg class="feat-svg" viewBox="0 0 680 280" xmlns="http://www.w3.org/2000/svg">
+            <!-- TV screen dark -->
+            <rect width="680" height="280" rx="12" fill="#0e0c12" stroke="#252030" />
+            <!-- Header gradient -->
+            <defs>
+              <linearGradient id="tvgrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#1e3a5f" />
+                <stop offset="100%" stop-color="#2563a8" />
+              </linearGradient>
+            </defs>
+            <rect width="680" height="56" rx="12" fill="url(#tvgrad)" />
+            <rect y="44" width="680" height="12" fill="url(#tvgrad)" />
+            <text
+              x="20"
+              y="22"
+              fill="rgba(255,255,255,0.55)"
+              font-size="9"
+              font-family="DM Sans,sans-serif"
+              letter-spacing="1"
+            >
+              CLINIQUE SANTÉ FÉMININE · DAKAR
+            </text>
+            <text
+              x="20"
+              y="42"
+              fill="white"
+              font-size="20"
+              font-family="Georgia,serif"
+              font-weight="700"
+            >
+              Salle d'attente
+            </text>
+            <text
+              x="600"
+              y="28"
+              fill="white"
+              font-size="30"
+              font-family="Georgia,serif"
+              font-weight="700"
+              text-anchor="middle"
+            >
+              09:42
+            </text>
+            <text
+              x="600"
+              y="46"
+              fill="rgba(255,255,255,0.5)"
+              font-size="10"
+              font-family="DM Sans,sans-serif"
+              text-anchor="middle"
+            >
+              Mercredi 30 Avril 2025
+            </text>
+            <!-- Divider vertical -->
+            <line x1="340" y1="68" x2="340" y2="242" stroke="rgba(255,255,255,0.07)" />
+            <!-- Left col -->
+            <text
+              x="24"
+              y="88"
+              fill="#6b7280"
+              font-size="9"
+              font-family="DM Sans,sans-serif"
+              letter-spacing="1"
+            >
+              EN CONSULTATION MAINTENANT
+            </text>
+            <rect
+              x="24"
+              y="98"
+              width="296"
+              height="76"
+              rx="9"
+              fill="rgba(26,107,92,0.2)"
+              stroke="rgba(26,107,92,0.3)"
+            />
+            <circle cx="64" cy="136" r="22" fill="rgba(26,107,92,0.35)" />
+            <text
+              x="64"
+              y="142"
+              text-anchor="middle"
+              fill="#5dcaa5"
+              font-size="21"
+              font-family="Georgia,serif"
+              font-weight="700"
+            >
+              1
+            </text>
+            <text
+              x="98"
+              y="128"
+              fill="white"
+              font-size="17"
+              font-family="Georgia,serif"
+              font-weight="700"
+            >
+              Aminata Diallo
+            </text>
+            <text x="98" y="146" fill="#5dcaa5" font-size="11" font-family="DM Sans,sans-serif">
+              Suivi grossesse · Dr. Diallo
+            </text>
+            <!-- Right col -->
+            <text
+              x="358"
+              y="88"
+              fill="#6b7280"
+              font-size="9"
+              font-family="DM Sans,sans-serif"
+              letter-spacing="1"
+            >
+              PROCHAINS APPELS
+            </text>
+            <!-- Item 2 -->
+            <rect
+              x="358"
+              y="96"
+              width="298"
+              height="38"
+              rx="7"
+              fill="rgba(255,255,255,0.04)"
+              stroke="rgba(255,255,255,0.05)"
+            />
+            <circle cx="381" cy="115" r="13" fill="rgba(181,122,152,0.2)" />
+            <text
+              x="381"
+              y="120"
+              text-anchor="middle"
+              fill="#e9adc8"
+              font-size="12"
+              font-family="Georgia,serif"
+              font-weight="700"
+            >
+              2
+            </text>
+            <text
+              x="404"
+              y="112"
+              fill="white"
+              font-size="12"
+              font-family="DM Sans,sans-serif"
+              font-weight="500"
+            >
+              Fatou Sène
+            </text>
+            <text x="404" y="125" fill="#6b7280" font-size="10" font-family="DM Sans,sans-serif">
+              Contraception
+            </text>
+            <text
+              x="618"
+              y="120"
+              fill="#fbbf24"
+              font-size="11"
+              font-family="DM Sans,sans-serif"
+              text-anchor="middle"
+            >
+              ~18 min
+            </text>
+            <!-- Item 3 -->
+            <rect
+              x="358"
+              y="140"
+              width="298"
+              height="38"
+              rx="7"
+              fill="rgba(255,255,255,0.04)"
+              stroke="rgba(255,255,255,0.05)"
+            />
+            <circle cx="381" cy="159" r="13" fill="rgba(181,122,152,0.2)" />
+            <text
+              x="381"
+              y="164"
+              text-anchor="middle"
+              fill="#e9adc8"
+              font-size="12"
+              font-family="Georgia,serif"
+              font-weight="700"
+            >
+              3
+            </text>
+            <text
+              x="404"
+              y="156"
+              fill="white"
+              font-size="12"
+              font-family="DM Sans,sans-serif"
+              font-weight="500"
+            >
+              Rokhaya Ndiaye
+            </text>
+            <text x="404" y="169" fill="#6b7280" font-size="10" font-family="DM Sans,sans-serif">
+              Bilan hormonal
+            </text>
+            <text
+              x="618"
+              y="164"
+              fill="#fbbf24"
+              font-size="11"
+              font-family="DM Sans,sans-serif"
+              text-anchor="middle"
+            >
+              ~34 min
+            </text>
+            <!-- Item 5 urgent -->
+            <rect
+              x="358"
+              y="184"
+              width="298"
+              height="38"
+              rx="7"
+              fill="rgba(184,32,32,0.12)"
+              stroke="rgba(184,32,32,0.3)"
+            />
+            <circle cx="381" cy="203" r="13" fill="rgba(184,32,32,0.35)" />
+            <text
+              x="381"
+              y="208"
+              text-anchor="middle"
+              fill="#f87171"
+              font-size="12"
+              font-family="Georgia,serif"
+              font-weight="700"
+            >
+              5
+            </text>
+            <text
+              x="404"
+              y="200"
+              fill="white"
+              font-size="12"
+              font-family="DM Sans,sans-serif"
+              font-weight="500"
+            >
+              Awa Mbaye
+            </text>
+            <text x="404" y="213" fill="#f87171" font-size="10" font-family="DM Sans,sans-serif">
+              Urgence
+            </text>
+            <text
+              x="618"
+              y="206"
+              fill="#f87171"
+              font-size="11"
+              font-family="DM Sans,sans-serif"
+              font-weight="600"
+              text-anchor="middle"
+            >
+              URGENT
+            </text>
+            <!-- Footer -->
+            <rect y="242" width="680" height="38" fill="rgba(255,255,255,0.03)" />
+            <circle cx="24" cy="261" r="4" fill="#4ade80" />
+            <text x="34" y="265" fill="#4ade80" font-size="10" font-family="DM Sans,sans-serif">
+              Temps réel
+            </text>
+            <text x="100" y="265" fill="#6b7280" font-size="10" font-family="DM Sans,sans-serif">
+              5 patientes en attente · Délai ~45 min · Merci de vous munir de votre carte
+              d'assurance
+            </text>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="bg-alt">
+      <div class="wrap-wide" id="modules">
+        <div class="eyebrow">Vue complète</div>
+        <div class="sec-title">20 modules. Une seule solution.</div>
+        <p class="sec-lead">
+          Tout ce dont un cabinet gynécologique a besoin, pensé pour le contexte africain, avec l'IA
+          au cœur de chaque fonctionnalité.
+        </p>
+        <div class="mod-grid">
+          <div class="mc">
+            <span class="mc-ico">⊞</span>
+            <div class="mc-n">Tableau de bord</div>
+            <div class="mc-d">KPIs, alertes IA, programme temps réel</div>
+            <span class="mc-tag t-ia">✨ IA</span>
+          </div>
+          <div class="mc">
+            <span class="mc-ico">⏱</span>
+            <div class="mc-n">File d'attente</div>
+            <div class="mc-d">Numérotation auto, urgences, temps réel</div>
+          </div>
+          <div class="mc">
+            <span class="mc-ico">📅</span>
+            <div class="mc-n">Agenda & RDV</div>
+            <div class="mc-d">Planning, créneaux, no-show auto</div>
+          </div>
+          <div class="mc">
+            <span class="mc-ico">📋</span>
+            <div class="mc-n">Dossiers médicaux</div>
+            <div class="mc-d">DME complet, ordonnances, examens</div>
+            <span class="mc-tag t-ia">✨ IA</span>
+          </div>
+          <div class="mc">
+            <span class="mc-ico">✨</span>
+            <div class="mc-n">Assistant IA</div>
+            <div class="mc-d">Claude API — transcription, ordonnances</div>
+            <span class="mc-tag t-ia">✨ IA</span>
+          </div>
+          <div class="mc">
+            <span class="mc-ico">🤱</span>
+            <div class="mc-n">Suivi grossesse</div>
+            <div class="mc-d">Courbes, terme, alertes automatiques</div>
+            <span class="mc-tag t-ia">✨ IA</span>
+          </div>
+          <div class="mc">
+            <span class="mc-ico">💳</span>
+            <div class="mc-n">Caisse</div>
+            <div class="mc-d">Wave, Orange Money, espèces, CB, IPM</div>
+            <span class="mc-tag t-fin">Sénégal</span>
+          </div>
+          <div class="mc">
+            <span class="mc-ico">📄</span>
+            <div class="mc-n">Factures & devis</div>
+            <div class="mc-d">Génération auto, relances IA impayés</div>
+            <span class="mc-tag t-ia">✨ IA</span>
+          </div>
+          <div class="mc">
+            <span class="mc-ico">🏦</span>
+            <div class="mc-n">Tiers payant / IPM</div>
+            <div class="mc-d">IPRES, CSS, AXA, Allianz</div>
+            <span class="mc-tag t-fin">Assurances SN</span>
+          </div>
+          <div class="mc">
+            <span class="mc-ico">📊</span>
+            <div class="mc-n">Comptabilité</div>
+            <div class="mc-d">Journal, graphiques, export comptable</div>
+          </div>
+          <div class="mc">
+            <span class="mc-ico">📦</span>
+            <div class="mc-n">Stocks</div>
+            <div class="mc-d">Inventaire, alertes rupture, IA commandes</div>
+            <span class="mc-tag t-ia">✨ IA</span>
+          </div>
+          <div class="mc">
+            <span class="mc-ico">👥</span>
+            <div class="mc-n">Personnel</div>
+            <div class="mc-d">Fiches, plannings, salaires, congés</div>
+          </div>
+          <div class="mc">
+            <span class="mc-ico">📹</span>
+            <div class="mc-n">Téléconsultation</div>
+            <div class="mc-d">Vidéo intégrée, CR automatique</div>
+            <span class="mc-tag t-com">Communication</span>
+          </div>
+          <div class="mc">
+            <span class="mc-ico">💬</span>
+            <div class="mc-n">WhatsApp Business</div>
+            <div class="mc-d">Réponses IA, rappels, campagnes</div>
+            <span class="mc-tag t-ia">✨ IA</span>
+          </div>
+          <div class="mc">
+            <span class="mc-ico">📺</span>
+            <div class="mc-n">Écran salle d'attente</div>
+            <div class="mc-d">TV dark mode, numéros temps réel</div>
+          </div>
+          <div class="mc">
+            <span class="mc-ico">📱</span>
+            <div class="mc-n">Portail patiente</div>
+            <div class="mc-d">PWA mobile — RDV, dossier, IA 24h/24</div>
+            <span class="mc-tag t-com">PWA</span>
+          </div>
+          <div class="mc">
+            <span class="mc-ico">🚀</span>
+            <div class="mc-n">Onboarding cabinet</div>
+            <div class="mc-d">Wizard 8 étapes — opérationnel en 1h</div>
+            <span class="mc-tag t-saas">SaaS</span>
+          </div>
+          <div class="mc">
+            <span class="mc-ico">🏥</span>
+            <div class="mc-n">Multi-cabinets</div>
+            <div class="mc-d">Vue super-admin, MRR, pipeline</div>
+            <span class="mc-tag t-saas">SaaS</span>
+          </div>
+          <div class="mc">
+            <span class="mc-ico">🔒</span>
+            <div class="mc-n">Sécurité & CDP</div>
+            <div class="mc-d">AES-256, backup auto, conformité SN</div>
+            <span class="mc-tag t-saas">Conformité</span>
+          </div>
+          <div class="mc">
+            <span class="mc-ico">📈</span>
+            <div class="mc-n">Statistiques IA</div>
+            <div class="mc-d">KPIs, insights, prévisions automatiques</div>
+            <span class="mc-tag t-ia">✨ IA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrap" id="patiente">
+      <div class="eyebrow">Application patiente</div>
+      <div class="sec-title">Une app que vos patientes vont adorer</div>
+      <p class="sec-lead">
+        La PWA Patiente s'installe sur n'importe quel téléphone sans App Store. Mobile-first,
+        disponible 24h/24.
+      </p>
+      <div class="phones">
+        <div class="ph">
+          <div class="ph-frame">
+            <div class="ph-bar">
+              <span class="ph-time">9:41</span><span style="font-size: 8px; color: #fff">●●●</span>
+            </div>
+            <div class="ph-hdr"><div class="ph-title">SantéFem</div></div>
+            <div class="ph-body">
+              <div class="ph-hero">
+                <div class="ph-greet">Bonjour 👋</div>
+                <div class="ph-name">Aminata Diallo</div>
+                <div class="ph-chips"><span class="ph-chip">🤱 24 SA</span></div>
+              </div>
+              <div class="ph-sec">Prochain RDV</div>
+              <div class="ph-rdv">
+                <div class="ph-rdv-t">08:30</div>
+                <div class="ph-rdv-n">Dr. Diallo</div>
+                <div class="ph-rdv-m">Suivi grossesse S24</div>
+              </div>
+              <div class="ph-al ph-aw">⚠ Anémie — Prenez le fer</div>
+              <div class="ph-al ph-ai">💡 Écho T2 à programmer</div>
+            </div>
+            <div class="ph-bnav">
+              <div class="ph-nb a">
+                <span class="ph-nb-ico">🏠</span><span class="ph-nb-lbl">Accueil</span>
+              </div>
+              <div class="ph-nb">
+                <span class="ph-nb-ico">⏱</span><span class="ph-nb-lbl">File</span>
+              </div>
+              <div class="ph-nb">
+                <span class="ph-nb-ico">📅</span><span class="ph-nb-lbl">RDV</span>
+              </div>
+              <div class="ph-nb">
+                <span class="ph-nb-ico">📋</span><span class="ph-nb-lbl">Dossier</span>
+              </div>
+              <div class="ph-nb">
+                <span class="ph-nb-ico">✨</span><span class="ph-nb-lbl">IA</span>
+              </div>
+            </div>
+          </div>
+          <div class="ph-lbl">Accueil</div>
+        </div>
+        <div class="ph">
+          <div class="ph-frame">
+            <div class="ph-bar">
+              <span class="ph-time">9:41</span><span style="font-size: 8px; color: #fff">●●●</span>
+            </div>
+            <div class="ph-hdr"><div class="ph-title">Ma file</div></div>
+            <div class="ph-body">
+              <div class="ph-qbig">
+                <div class="ph-ql">Votre numéro</div>
+                <div class="ph-qn">3</div>
+                <div class="ph-ql">2 personnes avant vous</div>
+              </div>
+              <div class="ph-wc">
+                <span style="font-size: 16px">⏱</span>
+                <div>
+                  <div class="ph-wt">
+                    34<span style="font-size: 10px; font-weight: 400"> min</span>
+                  </div>
+                  <div class="ph-wl">Temps estimé</div>
+                </div>
+              </div>
+              <div class="ph-ok">✓ SMS quand c'est votre tour</div>
+            </div>
+            <div class="ph-bnav">
+              <div class="ph-nb">
+                <span class="ph-nb-ico">🏠</span><span class="ph-nb-lbl">Accueil</span>
+              </div>
+              <div class="ph-nb a">
+                <span class="ph-nb-ico">⏱</span><span class="ph-nb-lbl">File</span>
+              </div>
+              <div class="ph-nb">
+                <span class="ph-nb-ico">📅</span><span class="ph-nb-lbl">RDV</span>
+              </div>
+              <div class="ph-nb">
+                <span class="ph-nb-ico">📋</span><span class="ph-nb-lbl">Dossier</span>
+              </div>
+              <div class="ph-nb">
+                <span class="ph-nb-ico">✨</span><span class="ph-nb-lbl">IA</span>
+              </div>
+            </div>
+          </div>
+          <div class="ph-lbl">File d'attente</div>
+        </div>
+        <div class="ph">
+          <div class="ph-frame">
+            <div class="ph-bar">
+              <span class="ph-time">9:41</span><span style="font-size: 8px; color: #fff">●●●</span>
+            </div>
+            <div class="ph-hdr"><div class="ph-title">Mon dossier</div></div>
+            <div class="ph-body">
+              <div class="ph-preg">
+                <div class="ph-ring">
+                  <div class="ph-rn">24</div>
+                  <div class="ph-rl">SA</div>
+                </div>
+                <div class="ph-term">Terme : 15 Août 2025</div>
+              </div>
+              <div class="ph-al ph-aw">⚠ Anémie Hb 10.2</div>
+              <div class="ph-al ph-ai">📋 Écho T2 avant 28 SA</div>
+            </div>
+            <div class="ph-bnav">
+              <div class="ph-nb">
+                <span class="ph-nb-ico">🏠</span><span class="ph-nb-lbl">Accueil</span>
+              </div>
+              <div class="ph-nb">
+                <span class="ph-nb-ico">⏱</span><span class="ph-nb-lbl">File</span>
+              </div>
+              <div class="ph-nb">
+                <span class="ph-nb-ico">📅</span><span class="ph-nb-lbl">RDV</span>
+              </div>
+              <div class="ph-nb a">
+                <span class="ph-nb-ico">📋</span><span class="ph-nb-lbl">Dossier</span>
+              </div>
+              <div class="ph-nb">
+                <span class="ph-nb-ico">✨</span><span class="ph-nb-lbl">IA</span>
+              </div>
+            </div>
+          </div>
+          <div class="ph-lbl">Suivi grossesse</div>
+        </div>
+        <div class="ph">
+          <div class="ph-frame">
+            <div class="ph-bar">
+              <span class="ph-time">9:41</span><span style="font-size: 8px; color: #fff">●●●</span>
+            </div>
+            <div class="ph-hdr" style="gap: 5px">
+              <div
+                style="
+                  width: 18px;
+                  height: 18px;
+                  border-radius: 50%;
+                  background: rgba(255, 255, 255, 0.2);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 9px;
+                  flex-shrink: 0;
+                "
+              >
+                ✨
+              </div>
+              <div class="ph-title" style="font-size: 10px">Assistante IA</div>
+            </div>
+            <div class="ph-chat">
+              <div class="pc-row bot">
+                <div class="pc-av">✨</div>
+                <div class="pc-bub">Bonjour ! Je suis là 24h/24 🌸</div>
+              </div>
+              <div class="pc-row me">
+                <div class="pc-bub">Puis-je prendre de l'ibuprofène ?</div>
+              </div>
+              <div class="pc-row bot">
+                <div class="pc-av">✨</div>
+                <div class="pc-bub">Non, déconseillé après 24 SA. Prenez du paracétamol 💊</div>
+              </div>
+            </div>
+            <div class="ph-ci">
+              <div class="ph-ci-inp">Votre question...</div>
+              <div class="ph-ci-btn">➤</div>
+            </div>
+            <div class="ph-bnav">
+              <div class="ph-nb">
+                <span class="ph-nb-ico">🏠</span><span class="ph-nb-lbl">Accueil</span>
+              </div>
+              <div class="ph-nb">
+                <span class="ph-nb-ico">⏱</span><span class="ph-nb-lbl">File</span>
+              </div>
+              <div class="ph-nb">
+                <span class="ph-nb-ico">📅</span><span class="ph-nb-lbl">RDV</span>
+              </div>
+              <div class="ph-nb">
+                <span class="ph-nb-ico">📋</span><span class="ph-nb-lbl">Dossier</span>
+              </div>
+              <div class="ph-nb a">
+                <span class="ph-nb-ico">✨</span><span class="ph-nb-lbl">IA</span>
+              </div>
+            </div>
+          </div>
+          <div class="ph-lbl">Chat IA 24h/24</div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-alt">
+      <div class="wrap" id="comparaison">
+        <div class="eyebrow">Comparaison</div>
+        <div class="sec-title">SantéFem Pro vs les solutions existantes</div>
+        <p class="sec-lead">
+          Les ERP génériques ne sont pas conçus pour les cabinets médicaux africains. La différence
+          est considérable.
+        </p>
+        <table class="comp-t">
+          <thead>
+            <tr>
+              <th>Fonctionnalité</th>
+              <th>Solutions existantes</th>
+              <th class="hl">SantéFem Pro</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fn">Dossier médical gynécologique</td>
+              <td class="no">✗ À développer</td>
+              <td class="ok">✓ Natif, complet</td>
+            </tr>
+            <tr>
+              <td class="fn">Suivi grossesse avec courbes</td>
+              <td class="no">✗ Inexistant</td>
+              <td class="ok">✓ Intégré</td>
+            </tr>
+            <tr>
+              <td class="fn">Transcription vocale IA</td>
+              <td class="no">✗ Non disponible</td>
+              <td class="ok">✓ Claude API</td>
+            </tr>
+            <tr>
+              <td class="fn">File d'attente temps réel</td>
+              <td class="no">✗ Inexistant</td>
+              <td class="ok">✓ Natif</td>
+            </tr>
+            <tr>
+              <td class="fn">Application mobile patientes</td>
+              <td class="no">✗ Inexistant</td>
+              <td class="ok">✓ PWA incluse</td>
+            </tr>
+            <tr>
+              <td class="fn">Wave / Orange Money</td>
+              <td class="no">✗ Plugin coûteux</td>
+              <td class="ok">✓ Natif</td>
+            </tr>
+            <tr>
+              <td class="fn">Assurances sénégalaises (IPM)</td>
+              <td class="no">✗ Configuration manuelle</td>
+              <td class="ok">✓ Préconfiguré</td>
+            </tr>
+            <tr>
+              <td class="fn">Mode hors connexion</td>
+              <td class="no">✗ Limité</td>
+              <td class="ok">✓ PWA robuste</td>
+            </tr>
+            <tr>
+              <td class="fn">Conformité CDP Sénégal</td>
+              <td class="no">✗ Non spécifique</td>
+              <td class="ok">✓ Certifié</td>
+            </tr>
+            <tr>
+              <td class="fn">Coût d'installation</td>
+              <td class="no">Plusieurs millions de FCFA</td>
+              <td class="ok">✓ Gratuit</td>
+            </tr>
+            <tr>
+              <td class="fn">Délai de mise en service</td>
+              <td class="no">3 à 6 mois</td>
+              <td class="ok">✓ 1 heure</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="wrap" id="tarifs">
+      <div class="eyebrow">Tarification</div>
+      <div class="sec-title">Simple, transparent, adapté au Sénégal</div>
+      <p class="sec-lead">
+        Un abonnement mensuel par cabinet. Pas de frais cachés. Résiliable à tout moment.
+      </p>
+      <div class="plans">
+        <div class="plan">
+          <div class="plan-nm">Starter</div>
+          <div class="plan-sb">Petit cabinet · 1 médecin</div>
+          <div class="plan-pr">45 000<span> FCFA/mois</span></div>
+          <div class="plan-div"></div>
+          <ul class="plan-fs">
+            <li>1 médecin · 1 secrétaire</li>
+            <li>Dossiers illimités</li>
+            <li>Agenda & file d'attente</li>
+            <li>Caisse Wave + Orange Money</li>
+            <li>Factures & comptabilité</li>
+            <li>App patiente incluse</li>
+            <li>Support par email</li>
+          </ul>
+          <button class="plan-btn">Essai gratuit 14 jours</button>
+        </div>
+        <div class="plan top">
+          <div class="plan-badge">Le plus populaire</div>
+          <div class="plan-nm">Pro</div>
+          <div class="plan-sb">Cabinet établi · 3 médecins</div>
+          <div class="plan-pr">89 000<span> FCFA/mois</span></div>
+          <div class="plan-div"></div>
+          <ul class="plan-fs">
+            <li>3 médecins · équipe illimitée</li>
+            <li>Tout Starter +</li>
+            <li>Assistant IA complet (Claude)</li>
+            <li>Transcription vocale</li>
+            <li>Téléconsultation vidéo</li>
+            <li>WhatsApp Business</li>
+            <li>Tiers payant & IPM</li>
+            <li>Stocks & personnel</li>
+            <li>Statistiques avancées IA</li>
+            <li>Support prioritaire</li>
+          </ul>
+          <button class="plan-btn">Essai gratuit 14 jours</button>
+        </div>
+        <div class="plan">
+          <div class="plan-nm">Enterprise</div>
+          <div class="plan-sb">Polyclinique · illimité</div>
+          <div class="plan-pr">185 000<span> FCFA/mois</span></div>
+          <div class="plan-div"></div>
+          <ul class="plan-fs">
+            <li>Médecins & sites illimités</li>
+            <li>Tout Pro +</li>
+            <li>Multi-sites / polyclinique</li>
+            <li>API sur mesure</li>
+            <li>Formation sur place incluse</li>
+            <li>Account manager dédié</li>
+            <li>SLA 99.9% garanti</li>
+          </ul>
+          <button class="plan-btn">Contacter l'équipe</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <h2>Prêt à transformer votre cabinet ?</h2>
+      <p>Rejoignez les cabinets qui ont choisi l'intelligence artificielle pour soigner mieux.</p>
+      <div class="footer-btns">
+        <button class="fb p">Essai gratuit 14 jours →</button
+        ><button class="fb s">Voir une démo</button>
+      </div>
+      <div class="footer-note">
+        SantéFem Pro · Dakar, Sénégal · santefem.app · Conformité CDP loi n°2008-12
+      </div>
+    </div>
+    <div id="chatbot">
+      <div id="cb-win">
+        <div class="cb-head">
+          <div class="cb-av">✨</div>
+          <div>
+            <div class="cb-nm">Assistant SantéFem Pro</div>
+            <div class="cb-st">
+              <div class="cb-sdot"></div>
+              En ligne · réponse immédiate
+            </div>
+          </div>
+          <button class="cb-x" onclick="toggleCB()">×</button>
+        </div>
+        <div class="cb-msgs" id="cbMsgs">
+          <div class="cb-row b">
+            <div class="cb-rav">✨</div>
+            <div class="cb-bub">
+              Bonjour ! Je suis l'assistant SantéFem Pro. Posez-moi vos questions — tarifs,
+              fonctionnalités, démarrage. 😊
+            </div>
+          </div>
+        </div>
+        <div class="cb-quick" id="cbQuick">
+          <button class="cb-qb" onclick="cbSendQ('Quels sont les tarifs ?')">Tarifs</button>
+          <button class="cb-qb" onclick="cbSendQ('Comment démarrer ?')">Démarrer</button>
+          <button class="cb-qb" onclick="cbSendQ('Wave et Orange Money sont-ils inclus ?')">
+            Wave / OM
+          </button>
+          <button class="cb-qb" onclick="cbSendQ('Quelles fonctionnalités IA ?')">IA</button>
+        </div>
+        <div class="cb-ir">
+          <input
+            class="cb-inp"
+            id="cbInp"
+            placeholder="Votre question..."
+            onkeydown="if (event.key === 'Enter') cbSend();"
+          />
+          <button class="cb-send" onclick="cbSend()">➤</button>
+        </div>
+      </div>
+      <button id="cb-btn" onclick="toggleCB()" title="Assistant SantéFem Pro">✨</button>
+    </div>
+    <script>
+      const SYS = `Tu es l'assistant commercial de SantéFem Pro, solution de gestion de cabinet gynécologique au Sénégal avec IA. Réponds en français, concis (max 3 phrases), professionnel et chaleureux.
+Données clés:
+- Tarifs: Starter 45 000 FCFA/mois (1 médecin), Pro 89 000 FCFA/mois (3 médecins + IA complète), Enterprise 185 000 FCFA/mois (illimité)
+- 20 modules: dossiers, file d'attente temps réel, agenda, IA Claude, caisse Wave/Orange Money, téléconsultation, WhatsApp Business, portail patiente PWA, comptabilité, stocks, personnel, tiers payant IPRES/CSS/AXA
+- Installation: 0 FCFA, opérationnel en 1 heure sur Vercel
+- Conformité CDP Sénégal, mode offline, backup automatique toutes les 6h
+- Vs solutions existantes: les ERP génériques coûtent des millions + 3-6 mois de configuration. SantéFem Pro: 0 FCFA, 1 heure
+- Essai gratuit 14 jours disponible`;
+
+      let cbOpen = false;
+      let cbMsgHistory = [];
+      const AI_PROXY_URL = window.__AI_PROXY_URL__ || "http://localhost:8787/api/ai/message";
+
+      function toggleCB() {
+        cbOpen = !cbOpen;
+        document.getElementById("cbWin").classList.toggle("open", cbOpen);
+        document.getElementById("cbBtn").textContent = cbOpen ? "×" : "✨";
+      }
+
+      function cbAddMsg(text, role) {
+        cbMsgHistory.push({ role: role === "u" ? "user" : "assistant", content: text });
+        const wrap = document.getElementById("cbMsgs");
+        const d = document.createElement("div");
+        d.className = "cb-row " + role;
+        d.innerHTML =
+          role === "b"
+            ? `<div class="cb-rav">✨</div><div class="cb-bub">${text}</div>`
+            : `<div class="cb-bub">${text}</div>`;
+        wrap.appendChild(d);
+        wrap.scrollTop = wrap.scrollHeight;
+      }
+
+      function cbTyping() {
+        const wrap = document.getElementById("cbMsgs");
+        const d = document.createElement("div");
+        d.className = "cb-row b";
+        d.id = "cbTyping";
+        d.innerHTML =
+          '<div class="cb-rav">✨</div><div class="cb-bub"><div class="cb-typing"><span></span><span></span><span></span></div></div>';
+        wrap.appendChild(d);
+        wrap.scrollTop = wrap.scrollHeight;
+      }
+
+      function cbRmTyping() {
+        const t = document.getElementById("cbTyping");
+        if (t) t.remove();
+      }
+
+      function cbFallback(txt) {
+        const t = txt.toLowerCase();
+        if (/tarif|prix|coût|combien/.test(t))
+          return "Nos plans : Starter 45 000 FCFA/mois (1 médecin), Pro 89 000 FCFA/mois (IA complète), Enterprise 185 000 FCFA/mois (illimité). Essai gratuit 14 jours !";
+        if (/wave|orange|paiement|mobile/.test(t))
+          return "Oui, Wave et Orange Money sont intégrés nativement dans la caisse — aucune configuration supplémentaire nécessaire.";
+        if (/ia|intelligence|claude|transcription/.test(t))
+          return "L'IA est au cœur de SantéFem Pro : transcription vocale des consultations, ordonnances automatiques, résumé du dossier avant chaque consultation, et chatbot patiente 24h/24.";
+        if (/démarrer|commencer|essai|comment/.test(t))
+          return "Cliquez sur 'Essai gratuit 14 jours' — votre cabinet est opérationnel en moins d'une heure. Nous vous accompagnons à chaque étape.";
+        return "Excellente question ! SantéFem Pro est la seule solution conçue spécifiquement pour les cabinets gynécologiques africains. Souhaitez-vous un essai gratuit de 14 jours ?";
+      }
+
+      async function cbCall(txt) {
+        document.getElementById("cbQuick").style.display = "none";
+        cbTyping();
+        try {
+          const res = await fetch(AI_PROXY_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              model: "claude-sonnet-4-20250514",
+              max_tokens: 250,
+              system: SYS,
+              messages: [...cbMsgHistory.slice(-6), { role: "user", content: txt }]
+            })
+          });
+          const data = await res.json();
+          cbRmTyping();
+          cbAddMsg(data.content?.[0]?.text || cbFallback(txt), "b");
+        } catch {
+          cbRmTyping();
+          cbAddMsg(cbFallback(txt), "b");
+        }
+      }
+
+      function cbSend() {
+        const inp = document.getElementById("cbInp");
+        const txt = inp.value.trim();
+        if (!txt) return;
+        inp.value = "";
+        cbAddMsg(txt, "u");
+        cbCall(txt);
+      }
+
+      function cbSendQ(txt) {
+        cbAddMsg(txt, "u");
+        cbCall(txt);
+      }
+    </script>
+  </body>
+</html>

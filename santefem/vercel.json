@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "name": "santefem-pro",
+  "rewrites": [
+    { "source": "/cabinet", "destination": "/cabinet/index.html" },
+    { "source": "/cabinet/:path*", "destination": "/cabinet/index.html" },
+    { "source": "/patiente", "destination": "/patiente/index.html" },
+    { "source": "/patiente/:path*", "destination": "/patiente/index.html" },
+    { "source": "/", "destination": "/patiente/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(self), geolocation=()" }
+      ]
+    },
+    {
+      "source": "/cabinet/(.*\\.(js|jsx|css|html|json|png|ico|svg|woff2?))",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/patiente/(.*\\.(js|jsx|css|html|json|png|ico|svg|woff2?))",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/(.*)/manifest.json",
+      "headers": [
+        { "key": "Content-Type", "value": "application/manifest+json" },
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    }
+  ]
+}

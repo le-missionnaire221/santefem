@@ -1,0 +1,43 @@
+{
+  "name": "santefem-pro",
+  "version": "1.0.0",
+  "description": "SantéFem Pro — Système de gestion cabinet gynécologique au Sénégal",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "dev:api": "node server/index.js",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "deploy": "vercel --prod",
+    "deploy:preview": "vercel"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@vitejs/plugin-react": "^5.1.0",
+    "eslint": "^10.3.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.6.0",
+    "prettier": "^3.8.3",
+    "vite": "^7.1.10"
+  },
+  "keywords": [
+    "gynecologie",
+    "sante",
+    "senegal",
+    "pwa",
+    "saas"
+  ],
+  "author": "SantéFem Pro",
+  "license": "UNLICENSED"
+}

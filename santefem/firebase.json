@@ -1,0 +1,21 @@
+{
+  "hosting": {
+    "public": ".",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      { "source": "/cabinet/**", "destination": "/cabinet/index.html" },
+      { "source": "/patiente/**", "destination": "/patiente/index.html" },
+      { "source": "/", "destination": "/presentation.html" }
+    ],
+    "headers": [
+      {
+        "source": "**/*.@(js|jsx|css|html)",
+        "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600" }]
+      },
+      {
+        "source": "**/manifest.json",
+        "headers": [{ "key": "Content-Type", "value": "application/manifest+json" }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "santefem-pro-root",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix ./santefem run dev",
+    "dev:api": "npm --prefix ./santefem run dev:api",
+    "build": "npm --prefix ./santefem run build",
+    "preview": "npm --prefix ./santefem run preview",
+    "lint": "npm --prefix ./santefem run lint",
+    "lint:fix": "npm --prefix ./santefem run lint:fix",
+    "format": "npm --prefix ./santefem run format",
+    "format:check": "npm --prefix ./santefem run format:check",
+    "deploy": "npm --prefix ./santefem run deploy",
+    "deploy:preview": "npm --prefix ./santefem run deploy:preview"
+  }
+}
